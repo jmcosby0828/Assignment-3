@@ -1,0 +1,24 @@
+<h2>Order Receipt</h2>
+
+<div>
+    <img src = "/images/{{book.image}}" alt = "Cover of {{book.title}}">
+</div>
+
+<p>Thank you for your order of <strong>{{book.title}}</strong>!</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>Number of copies</td>
+            <td>{{quantity}}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>${{book.price}}</td>
+        </tr>
+        <tr>
+            <td>Total (with tax)</td>
+            <td>${{total}}</td>
+        </tr>
+    </tbody>
+</table>

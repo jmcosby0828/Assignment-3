@@ -1,0 +1,29 @@
+<h2>Book Order Form</h2>
+<form action = "/order" method = "POST">
+<div>
+    <label for = "isbn">Select a Book:</label>
+    <select name = "isbn" id = "isbn">
+        <option value = "none">Select a Book</option>
+        {{#each books}}
+        <option value = "{{this.isbn}}">
+            {{this.title}}
+        </option>
+        {{/each}}
+    </select>
+    {{#if errors.isbn}}
+        <span class = "error">{{errors.isbn}}</span>
+    {{/if}}
+</div>
+
+<br>
+<div>
+    <label for="quantity">Number of Copies:</label>
+    <input type = "text" id = "quantity" name = "quantity" value = "{{quantityInput}}">
+    {{#if errors.quantity}}
+        <span class = "error">{{errors.quantity}}</span>
+    {{/if}}
+</div>
+<br>
+
+<button type = "submit">Place Order</button>
+</form>
